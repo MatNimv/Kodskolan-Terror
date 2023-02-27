@@ -88,12 +88,12 @@ export function sampleStudent(array){
     shuffleArr(array);
     console.log(array);
     let sortedStudents = array.sort((a, b) => a.value > b.value ? -1 : 1);
+    shuffleArr(sortedStudents);
     console.log(sortedStudents);
     
     let randStudent = ranDOMIZE(sortedStudents);
 
     let terrorizedStudent;
-    //let lesserStudent;
 
     sortedStudents.forEach(element => {
         //kolla om den har mindre poäng eller har samma
@@ -102,9 +102,6 @@ export function sampleStudent(array){
         if(randStudent.studentName === element.studentName){
             if (randStudent.value < element.value 
                 ||randStudent.value === element.value){
-                //lesserStudent = randStudent; //har inte blivit vald lika många ggr
-                //console.log(randStudent.value);
-                //console.log(element.value)
                 randStudent.value = element.value + 10;
                 terrorizedStudent = randStudent.studentName;
             }
@@ -119,11 +116,15 @@ export function howTerrorizedIsStudent(array){
     array.forEach(student => {
         let studentClass = document.querySelector(`.${student.studentName}`)
         if(student.value >= 10){
-            studentClass.style.color = "yellow";
+            studentClass.style.color = "burlywood";
         }if(student.value >= 20){
-            studentClass.style.color = "orange";
+            studentClass.style.color = "yellow";
         }if(student.value >= 30){
+            studentClass.style.color = "orange";
+        }if(student.value >= 40){
             studentClass.style.color = "red";
+        }if(student.value >= 50){
+            studentClass.style.color = "purple";
         }
     })
 }

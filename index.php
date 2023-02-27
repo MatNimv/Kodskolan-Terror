@@ -31,11 +31,11 @@ $users = loadJson("users.json");
         <form id="checkBoxes">
             <div class="checkBox">
                 <p>ALL</p>
-                <input type="radio">
+                <input type="radio" name="radAnswer" id="radioAll">
             </div>
             <div class="checkBox">
                 <p>TERRORIZED</p>
-                <input type="radio">
+                <input type="radio" name="radAnswer" id="radioTerror">
             </div>            
         </form>
             <div id="studentWrapperContent">

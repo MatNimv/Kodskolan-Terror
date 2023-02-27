@@ -1,18 +1,36 @@
 import { addInputDOM, addStudent, sampleStudent,howTerrorizedIsStudent, addStudentDOM } from "./functions.js";
 addInputDOM();
 
-let studentArray = jsonarray.studentArray;
+let studentArray = jsonarray;
 let chosenStudent = document.querySelector("#chosenStudent > span");
 let inputStudent = document.querySelector("input");
 
-console.log(studentArray);
-
-
 studentArray.forEach(element => {
     addStudentDOM(element.studentName);
+    
 });
 
 howTerrorizedIsStudent(studentArray);
+
+document.querySelector("#radioTerror").addEventListener("click", () => {
+    let terrorStudents = studentArray.filter(obj => obj.value > 0)
+    document.querySelector("#studentList").innerHTML = "";
+
+    terrorStudents.forEach(element => {
+        addStudentDOM(element.studentName);
+    });
+    howTerrorizedIsStudent(studentArray);
+})
+document.querySelector("#radioAll").addEventListener("click", () => {
+    document.querySelector("#studentList").innerHTML = "";
+
+    studentArray.forEach(element => {
+        addStudentDOM(element.studentName);
+    });
+    howTerrorizedIsStudent(studentArray);
+})
+
+
 
 
 

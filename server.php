@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
     $updatedArr = ["hej"];
 
-    saveJson("users.json", $_POST);
+    saveJson("users.json", $_POST["studentArray"]);
 
 }
 
