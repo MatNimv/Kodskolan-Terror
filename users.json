@@ -1,0 +1,40 @@
+{
+    "studentArray": [
+        {
+            "studentName": "Alexander",
+            "value": 30
+        },
+        {
+            "studentName": "Anna",
+            "value": 10
+        },
+        {
+            "studentName": "Sophie",
+            "value": 0
+        },
+        {
+            "studentName": "Miranda",
+            "value": 0
+        },
+        {
+            "studentName": "Liam",
+            "value": 0
+        },
+        {
+            "studentName": "Caspian",
+            "value": 0
+        },
+        {
+            "studentName": "Melinda",
+            "value": 0
+        },
+        {
+            "studentName": "Mehmet",
+            "value": 0
+        },
+        {
+            "studentName": "Matilda",
+            "value": 0
+        }
+    ]
+}

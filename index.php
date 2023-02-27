@@ -1,7 +1,15 @@
 <?php 
 error_reporting(-1);
-session_start(); 
+
+require_once "includes/functions.php";
+
+$users = loadJson("users.json");
 ?>
+
+<script>
+    let jsonarray = <?php echo json_encode($users); ?>
+</script>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +50,13 @@ session_start();
         <div id="chosenStudent">
             <span></span>
         </div>
+        <div id="btnWrapper">
+        <button id="savexit" >
+            Save Changes
+        </button>
     </div>
+    </div>
+
     <script type="module" src="includes/index.js"></script>
 </body>
 </html>

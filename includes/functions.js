@@ -41,6 +41,21 @@ export function addStudent(array){
     array.push(studentInfo);
 }
 
+export function addStudentDOM(name){
+    let inputStudent = document.querySelector(".inputStudent");
+    let studentListDOM = document.querySelector("#studentList");
+    //let name = inputStudent.value;
+    let nameDiv = document.createElement("div");
+    nameDiv.innerHTML = `<span>${name}</span>`;
+    nameDiv.classList.add("nameDiv");
+    nameDiv.classList.add(`${name}`);
+
+    studentListDOM.append(nameDiv);
+
+    inputStudent.value = "";
+    inputStudent.innerHTML = "";
+}
+
 function ranDOMIZE(array){
     let randStudent = array[Math.floor(Math.random()*array.length)]
 
@@ -80,8 +95,6 @@ export function sampleStudent(array){
     let terrorizedStudent;
     //let lesserStudent;
 
-
-
     sortedStudents.forEach(element => {
         //kolla om den har mindre poäng eller har samma
         //om så, har den inte blivit vald 
@@ -98,7 +111,6 @@ export function sampleStudent(array){
         }
     });
 
-console.log(sortedStudents);
 return terrorizedStudent
 }
 

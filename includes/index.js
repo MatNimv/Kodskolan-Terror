@@ -1,9 +1,19 @@
-import { addInputDOM, addStudent, sampleStudent,howTerrorizedIsStudent } from "./functions.js";
+import { addInputDOM, addStudent, sampleStudent,howTerrorizedIsStudent, addStudentDOM } from "./functions.js";
 addInputDOM();
 
-let studentArray = [];
+let studentArray = jsonarray.studentArray;
 let chosenStudent = document.querySelector("#chosenStudent > span");
 let inputStudent = document.querySelector("input");
+
+console.log(studentArray);
+
+
+studentArray.forEach(element => {
+    addStudentDOM(element.studentName);
+});
+
+howTerrorizedIsStudent(studentArray);
+
 
 
 document.querySelector(".add").addEventListener("click", () => {
@@ -19,11 +29,23 @@ document.querySelector("#terrorize").addEventListener("click", () => {
     //sampleStudent(studentArray);
     chosenStudent.innerHTML = terrorizedStudent;
 
-
     //check value of student
     howTerrorizedIsStudent(studentArray);
 })
 
+
+document.querySelector("#savexit").addEventListener("click", () => {
+    console.log(studentArray);
+
+    const data = {studentArray};
+    const req = new Request("../server.php", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {"Content-type": "application/json"}
+    });
+
+    fetch(req).then(response => console.log(response));
+    })
 
 
 
