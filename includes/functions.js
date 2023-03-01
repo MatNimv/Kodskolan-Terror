@@ -46,7 +46,7 @@ export function addStudentDOM(name){
     let studentListDOM = document.querySelector("#studentList");
     //let name = inputStudent.value;
     let nameDiv = document.createElement("div");
-    nameDiv.innerHTML = `<span>${name}</span>`;
+    nameDiv.innerHTML = `<span>${name}</span> <button class="remove">-</button>`;
     nameDiv.classList.add("nameDiv");
     nameDiv.classList.add(`${name}`);
 
@@ -55,6 +55,11 @@ export function addStudentDOM(name){
     inputStudent.value = "";
     inputStudent.innerHTML = "";
 }
+
+export function removeStudent(student, array){
+    let studentToRemove = array.findIndex(obj => obj.studentName === student)
+    array.splice(studentToRemove, 1);
+    }
 
 function ranDOMIZE(array){
     let randStudent = array[Math.floor(Math.random()*array.length)]

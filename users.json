@@ -1,23 +1,23 @@
 [
     {
         "studentName": "Alexander",
-        "value": 20
+        "value": 0
     },
     {
         "studentName": "Melinda",
-        "value": 10
+        "value": 0
     },
     {
         "studentName": "Liam",
-        "value": 10
+        "value": 0
     },
     {
         "studentName": "Anna",
-        "value": 10
+        "value": 0
     },
     {
         "studentName": "Sophie",
-        "value": 10
+        "value": 0
     },
     {
         "studentName": "Matilda",
@@ -29,7 +29,7 @@
     },
     {
         "studentName": "Caspian",
-        "value": 10
+        "value": 0
     },
     {
         "studentName": "Mehmet",

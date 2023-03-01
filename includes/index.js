@@ -1,4 +1,4 @@
-import { addInputDOM, addStudent, sampleStudent,howTerrorizedIsStudent, addStudentDOM } from "./functions.js";
+import { addInputDOM, addStudent, sampleStudent,howTerrorizedIsStudent, addStudentDOM, removeStudent } from "./functions.js";
 addInputDOM();
 
 let studentArray = jsonarray;
@@ -30,16 +30,23 @@ document.querySelector("#radioAll").addEventListener("click", () => {
     howTerrorizedIsStudent(studentArray);
 })
 
-
-
-
-
 document.querySelector(".add").addEventListener("click", () => {
     if (inputStudent.innerHTML== ""){
         //ERROR
     }
         addStudent(studentArray);
     })
+
+let removeButtons = document.querySelectorAll(".remove")
+removeButtons.forEach(obj => {
+    obj.addEventListener("click", (e) => {
+        let studentNamn = e.target.previousElementSibling.innerHTML;
+        removeStudent(studentNamn, studentArray);
+        console.log(e.target.parentElement); 
+        e.target.parentElement.remove();
+    })
+})
+
 
 document.querySelector("#terrorize").addEventListener("click", () => {
     //väljer ut en elev med value
